@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtxtnfdo2ksx0"]
+
+[ext_resource type="Script" path="res://Player-mov.gd" id="1_u46xs"]
+[ext_resource type="Script" path="res://Ball.gd" id="2_i4wiq"]
+[ext_resource type="Texture2D" uid="uid://bp2f1a7wb3mri" path="res://pngimg.com - ping_pong_PNG10383.png" id="2_jtfct"]
+[ext_resource type="Script" path="res://Player_move2.gd" id="2_wtty4"]
+[ext_resource type="Script" path="res://Score P1.gd" id="5_40hma"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7wqn"]
+size = Vector2(48.2184, 10.2343)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lf5bx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vp44"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(553, 63)
+scale = Vector2(16.2366, 0.88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+scale = Vector2(1.31995, 0.993789)
+shape = SubResource("RectangleShape2D_l7wqn")
+
+[node name="ColorRect" type="ColorRect" parent="Wall"]
+offset_left = -32.109
+offset_top = -4.54546
+offset_right = 325.891
+offset_bottom = 6.45454
+scale = Vector2(0.177902, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2(553, 584)
+scale = Vector2(16.2366, 0.88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+scale = Vector2(1.31654, 1)
+shape = SubResource("RectangleShape2D_l7wqn")
+
+[node name="ColorRect" type="ColorRect" parent="Wall2"]
+offset_left = -32.109
+offset_top = -4.54546
+offset_right = 325.891
+offset_bottom = 6.45454
+scale = Vector2(0.177902, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Player1" type="CharacterBody2D" parent="."]
+position = Vector2(43, 309)
+scale = Vector2(0.56, 2.08)
+script = ExtResource("1_u46xs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+shape = SubResource("RectangleShape2D_lf5bx")
+
+[node name="ColorRect" type="ColorRect" parent="Player1"]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0.0745098, 0, 1, 1)
+
+[node name="Player2" type="CharacterBody2D" parent="."]
+position = Vector2(1070, 324)
+scale = Vector2(0.56, 2.08)
+script = ExtResource("2_wtty4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+shape = SubResource("RectangleShape2D_lf5bx")
+
+[node name="ColorRect" type="ColorRect" parent="Player2"]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0.941176, 0, 0, 1)
+
+[node name="Ball" type="CharacterBody2D" parent="."]
+position = Vector2(557, 299)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("2_i4wiq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("CircleShape2D_8vp44")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+scale = Vector2(0.018, 0.018)
+texture = ExtResource("2_jtfct")
+
+[node name="Score P1" type="Label" parent="."]
+offset_left = 217.0
+offset_top = -1.0
+offset_right = 296.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0.0313726, 0, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"
+script = ExtResource("5_40hma")
+
+[node name="Score P2" type="Label" parent="."]
+offset_left = 836.0
+offset_right = 915.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.772549, 0.0823529, 0.105882, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"

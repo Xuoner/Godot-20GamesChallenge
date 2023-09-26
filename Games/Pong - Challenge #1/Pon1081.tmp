@@ -89,8 +89,6 @@ shape = SubResource("CircleShape2D_8vp44")
 scale = Vector2(0.018, 0.018)
 texture = ExtResource("2_jtfct")
 
-[node name="Visible" type="VisibleOnScreenNotifier2D" parent="Ball"]
-
 [node name="Score P1" type="Label" parent="."]
 offset_left = 217.0
 offset_top = -1.0
